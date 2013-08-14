@@ -34,6 +34,11 @@ module Pip
             return people_search(command, major, minor) if major
             return overview
           end
+
+          if command == 'dl'
+            return deal_search(command, major, minor) if major
+            return overview
+          end
         end
 
         def overview
@@ -43,7 +48,10 @@ module Pip
               :icon     => 'company.png' },
             'pn'    => {
               :subtitle => 'Create a note on a person',
-              :icon     => 'person.png' }
+              :icon     => 'person.png' },
+            'dl'    => {
+              :subtitle => 'Create a note on a deal',
+              :icon     => 'deal.png' }
           }
 
           commands.each do |name,opts|
@@ -113,6 +121,35 @@ module Pip
               :valid        => (minor ? "yes" : "no"),
               :autocomplete => "#{command} #{person['id']}",
               :icon         => {:type => "default", :name => "person.png"}
+            })
+          end
+        end
+
+        def dl
+          @feedback.add_item({
+            :uid          => "#{Alfred.bundle_id} dl",
+            :title        => "pip dl",
+            :subtitle     => subtitle,
+            :arg          => "dl",
+            :valid        => "no ",
+            :autocomplete => "dl",
+            :icon         => {:type => "default", :name => "person.png"}
+          })
+        end
+
+        def deal_search(command, major, minor)
+          req = Request.new "/deals"
+          deals = req.get( { 'conditions[deal_name]' => major } )['entries']
+
+          deals.each do |deal|
+            @feedback.add_item({
+              :uid          => "#{Alfred.bundle_id} dl",
+              :title        => "Create note on #{deal['name']}",
+              :subtitle     => deal['company']['name'],
+              :arg          => "#{command} #{deal['id']} #{minor}",
+              :valid        => (minor ? "yes" : "no"),
+              :autocomplete => "#{command} #{deal['id']}",
+              :icon         => {:type => "default", :name => "deal.png"}
             })
           end
         end

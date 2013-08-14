@@ -46,6 +46,25 @@ module Pip
             end
           end
         end
+
+        def dl(*args)
+          deal = args.shift
+          if args.any?
+            begin
+              req = Request.new "/notes"
+              result = req.post({
+                :note => {
+                  :deal_id  => deal,
+                  :content  => args.join(' ')
+              }})
+              status = "Note created!"
+            rescue => e
+              status = "Note creation FAILED!"
+            ensure
+              puts status
+            end
+          end
+        end
       end
     end
   end
