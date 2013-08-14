@@ -28,11 +28,33 @@
 				<string></string>
 			</dict>
 		</array>
+		<key>51F77402-24C5-4B32-BE21-0A4D27079505</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A91F2DD7-2E80-45FB-B309-0560E0013C45</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 		<key>5EE146EE-7E37-4028-A4EB-EDAB73022C3A</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
 				<string>C8DDE127-D320-4289-970F-38F5DF1A1688</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>6BEC5465-E3DB-4271-A965-CAD394F34106</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>51F77402-24C5-4B32-BE21-0A4D27079505</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -195,6 +217,31 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Pip Status</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>210532F8-5BE3-474F-AE44-516B73BB942B</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>argumenttype</key>
 				<integer>0</integer>
 				<key>escaping</key>
@@ -218,31 +265,6 @@
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
 			<string>88D1DF6B-65C9-400D-9B7A-70F93EF25DAE</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>output</key>
-				<integer>0</integer>
-				<key>removeextension</key>
-				<false/>
-				<key>sticky</key>
-				<false/>
-				<key>text</key>
-				<string>{query}</string>
-				<key>title</key>
-				<string>Pip Status</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>210532F8-5BE3-474F-AE44-516B73BB942B</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -350,6 +372,69 @@
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>You can now start using Pip.</string>
+				<key>title</key>
+				<string>Pip is now configured!</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>A91F2DD7-2E80-45FB-B309-0560E0013C45</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>pipconfig</string>
+				<key>subtext</key>
+				<string>Find your API key in your account and use it to configure Pip.</string>
+				<key>text</key>
+				<string>Set your PipelineDeals API key.</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>6BEC5465-E3DB-4271-A965-CAD394F34106</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>echo 'api_key: {query}' &gt; ~/.pipconfig.yml</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>51F77402-24C5-4B32-BE21-0A4D27079505</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
@@ -370,15 +455,30 @@
 			<key>ypos</key>
 			<real>250</real>
 		</dict>
+		<key>51F77402-24C5-4B32-BE21-0A4D27079505</key>
+		<dict>
+			<key>ypos</key>
+			<real>850</real>
+		</dict>
 		<key>5EE146EE-7E37-4028-A4EB-EDAB73022C3A</key>
 		<dict>
 			<key>ypos</key>
 			<real>610</real>
 		</dict>
+		<key>6BEC5465-E3DB-4271-A965-CAD394F34106</key>
+		<dict>
+			<key>ypos</key>
+			<real>850</real>
+		</dict>
 		<key>88D1DF6B-65C9-400D-9B7A-70F93EF25DAE</key>
 		<dict>
 			<key>ypos</key>
 			<real>370</real>
+		</dict>
+		<key>A91F2DD7-2E80-45FB-B309-0560E0013C45</key>
+		<dict>
+			<key>ypos</key>
+			<real>850</real>
 		</dict>
 		<key>C030956B-C5F7-4ACD-8B2B-C29AAEF89689</key>
 		<dict>
