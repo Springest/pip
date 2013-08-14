@@ -65,7 +65,7 @@ module Pip
             :title        => "pip cn",
             :subtitle     => subtitle,
             :arg          => "cn",
-            :valid        => "yes ",
+            :valid        => "no",
             :autocomplete => "cn",
             :icon         => {:type => "default", :name => "company.png"}
           })
@@ -90,23 +90,23 @@ module Pip
 
         def pn
           @feedback.add_item({
-            :uid          => "#{Alfred.bundle_id} cn",
-            :title        => "pip cn",
+            :uid          => "#{Alfred.bundle_id} pn",
+            :title        => "pip pn",
             :subtitle     => subtitle,
-            :arg          => "cn",
-            :valid        => "yes ",
-            :autocomplete => "cn",
+            :arg          => "pn",
+            :valid        => "no ",
+            :autocomplete => "pn",
             :icon         => {:type => "default", :name => "person.png"}
           })
         end
 
         def people_search(command, major, minor)
           req = Request.new "/people"
-          companies = req.get( { 'conditions[person_name]' => major } )['entries']
+          people = req.get( { 'conditions[person_name]' => major } )['entries']
 
-          companies.each do |person|
+          people.each do |person|
             @feedback.add_item({
-              :uid          => "#{Alfred.bundle_id} cn",
+              :uid          => "#{Alfred.bundle_id} pn",
               :title        => "Create note on #{person['first_name']} #{person['last_name']}",
               :subtitle     => person['company_name'],
               :arg          => "#{command} #{person['id']} #{minor}",
