@@ -29,11 +29,17 @@ module Pip
             return company_search(command, major, minor) if major
             return overview
           end
+
+          if command == 'pn'
+            return people_search(command, major, minor) if major
+            return overview
+          end
         end
 
         def overview
           commands = {
-            'cn'    => 'Create a company note',
+            'cn'    => 'Create a note on a company',
+            'pn'    => 'Create a note on a person',
           }
 
           commands.each do |name,subtitle|
@@ -72,6 +78,34 @@ module Pip
               :arg          => "#{command} #{company['id']} #{minor}",
               :valid        => (minor ? "yes" : "no"),
               :autocomplete => "#{command} #{company['id']}"
+            })
+          end
+        end
+
+        def pn
+          @feedback.add_item({
+            :uid          => "#{Alfred.bundle_id} cn",
+            :title        => "pip cn",
+            :subtitle     => subtitle,
+            :arg          => "cn",
+            :valid        => "yes ",
+            :autocomplete => "cn",
+            # :icon         => "http://www.pipelinedeals.com/images/thumb/missing_company.png"
+          })
+        end
+
+        def people_search(command, major, minor)
+          req = Request.new "/people"
+          companies = req.get( { 'conditions[person_name]' => major } )['entries']
+
+          companies.each do |person|
+            @feedback.add_item({
+              :uid          => "#{Alfred.bundle_id} cn",
+              :title        => "Create note on #{person['first_name']} #{person['last_name']}",
+              :subtitle     => person['company_name'],
+              :arg          => "#{command} #{person['id']} #{minor}",
+              :valid        => (minor ? "yes" : "no"),
+              :autocomplete => "#{command} #{person['id']}"
             })
           end
         end
