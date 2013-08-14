@@ -28,6 +28,28 @@
 				<string></string>
 			</dict>
 		</array>
+		<key>DA411404-0FD6-431E-ABBB-7391B4D82EAB</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B915A86F-1096-4F18-A03B-170336596AB1</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>EE00584D-F920-4A8B-ADCC-7610E26E2FA5</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>DA411404-0FD6-431E-ABBB-7391B4D82EAB</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 	</dict>
 	<key>createdby</key>
 	<string>Wouter de Vos</string>
@@ -39,6 +61,31 @@
 	<string>Pipeline</string>
 	<key>objects</key>
 	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>output</key>
+				<integer>0</integer>
+				<key>removeextension</key>
+				<false/>
+				<key>sticky</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Pip Status</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>210532F8-5BE3-474F-AE44-516B73BB942B</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -88,6 +135,44 @@
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>pipconfig</string>
+				<key>subtext</key>
+				<string>Find your API key in your account and use it to configure Pip.</string>
+				<key>text</key>
+				<string>Set your pipeline API key</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>EE00584D-F920-4A8B-ADCC-7610E26E2FA5</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>escaping</key>
+				<integer>127</integer>
+				<key>script</key>
+				<string>echo 'api_key: {query}' &gt; ~/.pipconfig.yml</string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>DA411404-0FD6-431E-ABBB-7391B4D82EAB</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>lastpathcomponent</key>
 				<false/>
 				<key>onlyshowifquerypopulated</key>
@@ -99,14 +184,14 @@
 				<key>sticky</key>
 				<false/>
 				<key>text</key>
-				<string>{query}</string>
+				<string>You can start using Pip now.</string>
 				<key>title</key>
-				<string>Pip Status</string>
+				<string>Pip is now configured!</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.output.notification</string>
 			<key>uid</key>
-			<string>210532F8-5BE3-474F-AE44-516B73BB942B</string>
+			<string>B915A86F-1096-4F18-A03B-170336596AB1</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -125,10 +210,25 @@
 			<key>ypos</key>
 			<real>10</real>
 		</dict>
+		<key>B915A86F-1096-4F18-A03B-170336596AB1</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
 		<key>C8DDE127-D320-4289-970F-38F5DF1A1688</key>
 		<dict>
 			<key>ypos</key>
 			<real>10</real>
+		</dict>
+		<key>DA411404-0FD6-431E-ABBB-7391B4D82EAB</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
+		</dict>
+		<key>EE00584D-F920-4A8B-ADCC-7610E26E2FA5</key>
+		<dict>
+			<key>ypos</key>
+			<real>130</real>
 		</dict>
 	</dict>
 	<key>webaddress</key>
