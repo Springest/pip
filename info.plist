@@ -17,6 +17,50 @@
 				<string></string>
 			</dict>
 		</array>
+		<key>22725E5A-86F1-450F-9FB8-B9069BCAFBA6</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C8DDE127-D320-4289-970F-38F5DF1A1688</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>5EE146EE-7E37-4028-A4EB-EDAB73022C3A</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C8DDE127-D320-4289-970F-38F5DF1A1688</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>88D1DF6B-65C9-400D-9B7A-70F93EF25DAE</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C8DDE127-D320-4289-970F-38F5DF1A1688</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
+		<key>C030956B-C5F7-4ACD-8B2B-C29AAEF89689</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C8DDE127-D320-4289-970F-38F5DF1A1688</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+			</dict>
+		</array>
 		<key>C8DDE127-D320-4289-970F-38F5DF1A1688</key>
 		<array>
 			<dict>
@@ -28,22 +72,22 @@
 				<string></string>
 			</dict>
 		</array>
-		<key>DA411404-0FD6-431E-ABBB-7391B4D82EAB</key>
+		<key>D4EF2920-7B40-42D9-B8C5-46AC8E46EBE1</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>B915A86F-1096-4F18-A03B-170336596AB1</string>
+				<string>C8DDE127-D320-4289-970F-38F5DF1A1688</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
 			</dict>
 		</array>
-		<key>EE00584D-F920-4A8B-ADCC-7610E26E2FA5</key>
+		<key>FF711E32-2ACD-44D0-8EA0-A879BF910B91</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>DA411404-0FD6-431E-ABBB-7391B4D82EAB</string>
+				<string>C8DDE127-D320-4289-970F-38F5DF1A1688</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -61,6 +105,122 @@
 	<string>Pipeline</string>
 	<key>objects</key>
 	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>126</integer>
+				<key>keyword</key>
+				<string>pip</string>
+				<key>runningsubtext</key>
+				<string>Please wait...</string>
+				<key>script</key>
+				<string>/usr/bin/ruby ./pip.rb filter {query}</string>
+				<key>subtext</key>
+				<string>Pipeline Deals</string>
+				<key>title</key>
+				<string>Pip</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>0BEA3B9D-0905-4663-92A4-3F1D16116CC0</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>126</integer>
+				<key>keyword</key>
+				<string>pip company task</string>
+				<key>runningsubtext</key>
+				<string>Please wait...</string>
+				<key>script</key>
+				<string>/usr/bin/ruby ./pip.rb filter ct {query}</string>
+				<key>subtext</key>
+				<string>Create a company task in Pipeline</string>
+				<key>title</key>
+				<string>Pipeline Company Task</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>C030956B-C5F7-4ACD-8B2B-C29AAEF89689</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>126</integer>
+				<key>keyword</key>
+				<string>pip deal task</string>
+				<key>runningsubtext</key>
+				<string>Please wait...</string>
+				<key>script</key>
+				<string>/usr/bin/ruby ./pip.rb filter dt {query}</string>
+				<key>subtext</key>
+				<string>Create a Task on a Deal</string>
+				<key>title</key>
+				<string>Pipeline Deal Task</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>22725E5A-86F1-450F-9FB8-B9069BCAFBA6</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>escaping</key>
+				<integer>126</integer>
+				<key>keyword</key>
+				<string>pip person task</string>
+				<key>runningsubtext</key>
+				<string>Please wait...</string>
+				<key>script</key>
+				<string>/usr/bin/ruby ./pip.rb filter pt {query}</string>
+				<key>subtext</key>
+				<string>Create a Note/Activity on a Person</string>
+				<key>title</key>
+				<string>Pipeline Personal Task</string>
+				<key>type</key>
+				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>88D1DF6B-65C9-400D-9B7A-70F93EF25DAE</string>
+			<key>version</key>
+			<integer>0</integer>
+		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
@@ -107,19 +267,19 @@
 			<key>config</key>
 			<dict>
 				<key>argumenttype</key>
-				<integer>1</integer>
+				<integer>0</integer>
 				<key>escaping</key>
 				<integer>126</integer>
 				<key>keyword</key>
-				<string>pip</string>
+				<string>pip company note</string>
 				<key>runningsubtext</key>
 				<string>Please wait...</string>
 				<key>script</key>
-				<string>/usr/bin/ruby ./pip.rb filter {query}</string>
+				<string>/usr/bin/ruby ./pip.rb filter cn {query}</string>
 				<key>subtext</key>
-				<string>Pipeline Deals</string>
+				<string>Create a Note/Activity on a Company</string>
 				<key>title</key>
-				<string>Pip</string>
+				<string>Pipeline Company Note/Activity</string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>
@@ -128,7 +288,7 @@
 			<key>type</key>
 			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
-			<string>0BEA3B9D-0905-4663-92A4-3F1D16116CC0</string>
+			<string>D4EF2920-7B40-42D9-B8C5-46AC8E46EBE1</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -137,61 +297,56 @@
 			<dict>
 				<key>argumenttype</key>
 				<integer>0</integer>
+				<key>escaping</key>
+				<integer>126</integer>
 				<key>keyword</key>
-				<string>pipconfig</string>
+				<string>pip personal note</string>
+				<key>runningsubtext</key>
+				<string>Please wait...</string>
+				<key>script</key>
+				<string>/usr/bin/ruby ./pip.rb filter pn {query}</string>
 				<key>subtext</key>
-				<string>Find your API key in your account and use it to configure Pip.</string>
-				<key>text</key>
-				<string>Set your pipeline API key</string>
+				<string>Create a Note/Activity on a Person</string>
+				<key>title</key>
+				<string>Pipeline Personal Note/Activity</string>
+				<key>type</key>
+				<integer>0</integer>
 				<key>withspace</key>
 				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
+			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
-			<string>EE00584D-F920-4A8B-ADCC-7610E26E2FA5</string>
+			<string>5EE146EE-7E37-4028-A4EB-EDAB73022C3A</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
 				<key>escaping</key>
-				<integer>127</integer>
+				<integer>126</integer>
+				<key>keyword</key>
+				<string>pip deal note</string>
+				<key>runningsubtext</key>
+				<string>Please wait...</string>
 				<key>script</key>
-				<string>echo 'api_key: {query}' &gt; ~/.pipconfig.yml</string>
+				<string>/usr/bin/ruby ./pip.rb filter dn {query}</string>
+				<key>subtext</key>
+				<string>Create a Note/Activity on a Deal</string>
+				<key>title</key>
+				<string>Pipeline Deal Note/Activity</string>
 				<key>type</key>
 				<integer>0</integer>
+				<key>withspace</key>
+				<true/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.script</string>
+			<string>alfred.workflow.input.scriptfilter</string>
 			<key>uid</key>
-			<string>DA411404-0FD6-431E-ABBB-7391B4D82EAB</string>
-			<key>version</key>
-			<integer>0</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>output</key>
-				<integer>0</integer>
-				<key>removeextension</key>
-				<false/>
-				<key>sticky</key>
-				<false/>
-				<key>text</key>
-				<string>You can start using Pip now.</string>
-				<key>title</key>
-				<string>Pip is now configured!</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>B915A86F-1096-4F18-A03B-170336596AB1</string>
+			<string>FF711E32-2ACD-44D0-8EA0-A879BF910B91</string>
 			<key>version</key>
 			<integer>0</integer>
 		</dict>
@@ -208,9 +363,24 @@
 		<key>210532F8-5BE3-474F-AE44-516B73BB942B</key>
 		<dict>
 			<key>ypos</key>
-			<real>10</real>
+			<real>370</real>
 		</dict>
-		<key>B915A86F-1096-4F18-A03B-170336596AB1</key>
+		<key>22725E5A-86F1-450F-9FB8-B9069BCAFBA6</key>
+		<dict>
+			<key>ypos</key>
+			<real>250</real>
+		</dict>
+		<key>5EE146EE-7E37-4028-A4EB-EDAB73022C3A</key>
+		<dict>
+			<key>ypos</key>
+			<real>610</real>
+		</dict>
+		<key>88D1DF6B-65C9-400D-9B7A-70F93EF25DAE</key>
+		<dict>
+			<key>ypos</key>
+			<real>370</real>
+		</dict>
+		<key>C030956B-C5F7-4ACD-8B2B-C29AAEF89689</key>
 		<dict>
 			<key>ypos</key>
 			<real>130</real>
@@ -218,17 +388,17 @@
 		<key>C8DDE127-D320-4289-970F-38F5DF1A1688</key>
 		<dict>
 			<key>ypos</key>
-			<real>10</real>
+			<real>370</real>
 		</dict>
-		<key>DA411404-0FD6-431E-ABBB-7391B4D82EAB</key>
+		<key>D4EF2920-7B40-42D9-B8C5-46AC8E46EBE1</key>
 		<dict>
 			<key>ypos</key>
-			<real>130</real>
+			<real>490</real>
 		</dict>
-		<key>EE00584D-F920-4A8B-ADCC-7610E26E2FA5</key>
+		<key>FF711E32-2ACD-44D0-8EA0-A879BF910B91</key>
 		<dict>
 			<key>ypos</key>
-			<real>130</real>
+			<real>730</real>
 		</dict>
 	</dict>
 	<key>webaddress</key>
