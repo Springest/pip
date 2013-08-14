@@ -5,6 +5,9 @@ Notes/Activities and Tasks with it for Companies, People and Deals:
 
 ## Get Started
 
+[Download](https://github.com/Springest/pip/raw/master/Pipeline.alfredworkflow)
+the latest Pip workflow and double click it to install.
+
 Find your API key in [Account Settings > API] and use it to configure
 Pip, right from Alfred:
 
