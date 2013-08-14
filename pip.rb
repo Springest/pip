@@ -20,7 +20,7 @@ if command == 'filter'
   require './lib/pip/alfred/filter'
 else
 # $stdout.reopen("log", "w")
-# $stderr.reopen("log", "w")
+$stderr.reopen("log", "w")
 
   require './lib/pip/alfred/action'
 end

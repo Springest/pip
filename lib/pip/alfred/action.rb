@@ -27,6 +27,25 @@ module Pip
             end
           end
         end
+
+        def pn(*args)
+          person = args.shift
+          if args.any?
+            begin
+              req = Request.new "/notes"
+              result = req.post({
+                :note => {
+                  :person_id  => person,
+                  :content    => args.join(' ')
+              }})
+              status = "Note created!"
+            rescue => e
+              status = "Note creation FAILED!"
+            ensure
+              puts status
+            end
+          end
+        end
       end
     end
   end
