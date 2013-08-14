@@ -38,18 +38,23 @@ module Pip
 
         def overview
           commands = {
-            'cn'    => 'Create a note on a company',
-            'pn'    => 'Create a note on a person',
+            'cn'    => {
+              :subtitle => 'Create a note on a company',
+              :icon     => 'company.png' },
+            'pn'    => {
+              :subtitle => 'Create a note on a person',
+              :icon     => 'person.png' }
           }
 
-          commands.each do |name,subtitle|
+          commands.each do |name,opts|
             @feedback.add_item({
               :uid          => "#{Alfred.bundle_id} #{name}",
               :title        => "pip #{name}",
-              :subtitle     => subtitle,
+              :subtitle     => opts[:subtitle],
               :arg          => "#{name}",
               :valid        => "yes",
-              :autocomplete => "#{name}"
+              :autocomplete => "#{name}",
+              :icon         => {:type => "default", :name => (opts[:icon] || "icon.png")}
             })
           end
         end
@@ -62,7 +67,7 @@ module Pip
             :arg          => "cn",
             :valid        => "yes ",
             :autocomplete => "cn",
-            # :icon         => "http://www.pipelinedeals.com/images/thumb/missing_company.png"
+            :icon         => {:type => "default", :name => "company.png"}
           })
         end
 
@@ -77,7 +82,8 @@ module Pip
               :subtitle     => company['city'],
               :arg          => "#{command} #{company['id']} #{minor}",
               :valid        => (minor ? "yes" : "no"),
-              :autocomplete => "#{command} #{company['id']}"
+              :autocomplete => "#{command} #{company['id']}",
+              :icon         => {:type => "default", :name => "company.png"}
             })
           end
         end
@@ -90,7 +96,7 @@ module Pip
             :arg          => "cn",
             :valid        => "yes ",
             :autocomplete => "cn",
-            # :icon         => "http://www.pipelinedeals.com/images/thumb/missing_company.png"
+            :icon         => {:type => "default", :name => "person.png"}
           })
         end
 
@@ -105,7 +111,8 @@ module Pip
               :subtitle     => person['company_name'],
               :arg          => "#{command} #{person['id']} #{minor}",
               :valid        => (minor ? "yes" : "no"),
-              :autocomplete => "#{command} #{person['id']}"
+              :autocomplete => "#{command} #{person['id']}",
+              :icon         => {:type => "default", :name => "person.png"}
             })
           end
         end
