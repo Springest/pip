@@ -83,6 +83,8 @@ module Pip
             wday = Time.now.wday
 
             due = case due
+            when 'today'
+              Time.now + 24*3600
             when 'tomorrow'
               Time.now + 24*3600
             when 'week'
@@ -90,17 +92,41 @@ module Pip
             when 'mon'
               Time.now + (7 - wday + 1)*24*3600
             when 'tue'
-              Time.now + (7 - wday + 2)*24*3600
+              if wday < 2
+                Time.now + 24*3600
+              else
+                Time.now + (7 - wday + 2)*24*3600
+              end
             when 'wed'
-              Time.now + (7 - wday + 3)*24*3600
+              if wday < 3
+                Time.now + (3-wday)*24*3600
+              else
+                Time.now + (7 - wday + 3)*24*3600
+              end
             when 'thu'
-              Time.now + (7 - wday + 4)*24*3600
+              if wday < 4
+                Time.now + (4-wday)*24*3600
+              else
+                Time.now + (7 - wday + 4)*24*3600
+              end
             when 'fri'
-              Time.now + (7 - wday + 5)*24*3600
+              if wday < 5
+                Time.now + (5-wday)*24*3600
+              else
+                Time.now + (7 - wday + 5)*24*3600
+              end
             when 'sat'
-              Time.now + (7 - wday + 6)*24*3600
+              if wday < 6
+                Time.now + (6-wday)*24*3600
+              else
+                Time.now + (7 - wday + 6)*24*3600
+              end
             when 'sun'
-              Time.now + (7 - wday + 7)*24*3600
+              if wday < 7
+                Time.now + (7-wday)*24*3600
+              else
+                Time.now + (7 - wday + 7)*24*3600
+              end
             else
               nil
             end
