@@ -52,7 +52,7 @@ module Pip
               :title        => "pip #{name}",
               :subtitle     => opts[:subtitle],
               :arg          => "#{name}",
-              :valid        => "yes",
+              :valid        => "no",
               :autocomplete => "#{name}",
               :icon         => {:type => "default", :name => (opts[:icon] || "icon.png")}
             })
