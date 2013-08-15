@@ -89,39 +89,39 @@ module Pip
               Time.now + 24*3600
             when 'week'
               Time.now + 7*24*3600
-            when 'mon'
+            when 'mon' || 'monday'
               Time.now + (7 - wday + 1)*24*3600
-            when 'tue'
+            when 'tue' || 'tuesday'
               if wday < 2
                 Time.now + 24*3600
               else
                 Time.now + (7 - wday + 2)*24*3600
               end
-            when 'wed'
+            when 'wed' || 'wednesday'
               if wday < 3
                 Time.now + (3-wday)*24*3600
               else
                 Time.now + (7 - wday + 3)*24*3600
               end
-            when 'thu'
+            when 'thu' || 'thursday'
               if wday < 4
                 Time.now + (4-wday)*24*3600
               else
                 Time.now + (7 - wday + 4)*24*3600
               end
-            when 'fri'
+            when 'fri' || 'friday'
               if wday < 5
                 Time.now + (5-wday)*24*3600
               else
                 Time.now + (7 - wday + 5)*24*3600
               end
-            when 'sat'
+            when 'sat' || 'saturday'
               if wday < 6
                 Time.now + (6-wday)*24*3600
               else
                 Time.now + (7 - wday + 6)*24*3600
               end
-            when 'sun'
+            when 'sun' || 'sunday'
               if wday < 7
                 Time.now + (7-wday)*24*3600
               else

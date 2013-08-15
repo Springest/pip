@@ -101,15 +101,15 @@ All time options:
 - `@today` - Due today
 - `@tomorrow` - Due tommorrow
 - `@week` - Due next week
-- `@mon` - Due next monday
-- `@tue` - Due next tuesday
-- `@wed` - Due next wednesday
-- `@thu` - Due next thursday
-- `@fri` - Due next friday
+- `@monday` or `@mon` - Due next monday
+- `@tuesday` or `@tue` - Due next tuesday
+- `@wednesday` or `@wed` - Due next wednesday
+- `@thursday` or `@thu` - Due next thursday
+- `@friday` or `@fri` - Due next friday
 
 And for the workaholics:
 
-- `@sat` - Due next saturday
-- `@sun` - Due next sunday
+- `@saturday` or `@sat` - Due next saturday
+- `@sunday` or `@sun` - Due next sunday
 
 That is all. Enjoy!
