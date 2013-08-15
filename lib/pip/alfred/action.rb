@@ -72,67 +72,8 @@ module Pip
 
           return unless args.any? # No need to go on
 
-          due = args.last.match /@(\w+)$/
-          due = due[1] if due
-
-          if due
-            args.pop
-
-            return unless args.any?
-
-            wday = Time.now.wday
-
-            due = case due
-            when 'today'
-              Time.now + 24*3600
-            when 'tomorrow'
-              Time.now + 24*3600
-            when 'week'
-              Time.now + 7*24*3600
-            when 'mon' || 'monday'
-              Time.now + (7 - wday + 1)*24*3600
-            when 'tue' || 'tuesday'
-              if wday < 2
-                Time.now + 24*3600
-              else
-                Time.now + (7 - wday + 2)*24*3600
-              end
-            when 'wed' || 'wednesday'
-              if wday < 3
-                Time.now + (3-wday)*24*3600
-              else
-                Time.now + (7 - wday + 3)*24*3600
-              end
-            when 'thu' || 'thursday'
-              if wday < 4
-                Time.now + (4-wday)*24*3600
-              else
-                Time.now + (7 - wday + 4)*24*3600
-              end
-            when 'fri' || 'friday'
-              if wday < 5
-                Time.now + (5-wday)*24*3600
-              else
-                Time.now + (7 - wday + 5)*24*3600
-              end
-            when 'sat' || 'saturday'
-              if wday < 6
-                Time.now + (6-wday)*24*3600
-              else
-                Time.now + (7 - wday + 6)*24*3600
-              end
-            when 'sun' || 'sunday'
-              if wday < 7
-                Time.now + (7-wday)*24*3600
-              else
-                Time.now + (7 - wday + 7)*24*3600
-              end
-            else
-              nil
-            end
-
-            due = due.strftime "%Y-%m-%d" if due
-          end
+          due = due_to_time args.last
+          args.pop if due
 
           opts = {
             :calendar_entry => {
@@ -144,18 +85,77 @@ module Pip
 
           opts[:calendar_entry][:due_date] = due if due
 
-          $stderr.puts opts
-
           begin
             req = Request.new "/calendar_entries"
             result = req.post(opts)
-            $stderr.puts result
             status = "Task created!"
           rescue => e
             status = "Task creation FAILED!"
           ensure
             puts status
           end
+        end
+
+        def due_to_time(due)
+          return unless due
+
+          due = due.strip.downcase.chomp.match /^@(\w+)$/
+          due = due[1] if due
+
+          wday = Time.now.wday
+
+          due = case due
+          when 'today'
+            Time.now + 24*3600
+          when 'tomorrow'
+            Time.now + 24*3600
+          when 'week'
+            Time.now + 7*24*3600
+          when 'mon', 'monday'
+            Time.now + (7 - wday + 1)*24*3600
+          when 'tue', 'tuesday'
+            if wday < 2
+              Time.now + 24*3600
+            else
+              Time.now + (7 - wday + 2)*24*3600
+            end
+          when 'wed', 'wednesday'
+            if wday < 3
+              Time.now + (3-wday)*24*3600
+            else
+              Time.now + (7 - wday + 3)*24*3600
+            end
+          when 'thu', 'thursday'
+            if wday < 4
+              Time.now + (4-wday)*24*3600
+            else
+              Time.now + (7 - wday + 4)*24*3600
+            end
+          when 'fri', 'friday'
+            if wday < 5
+              Time.now + (5-wday)*24*3600
+            else
+              Time.now + (7 - wday + 5)*24*3600
+            end
+          when 'sat', 'saturday'
+            if wday < 6
+              Time.now + (6-wday)*24*3600
+            else
+              Time.now + (7 - wday + 6)*24*3600
+            end
+          when 'sun', 'sunday'
+            if wday < 7
+              Time.now + (7-wday)*24*3600
+            else
+              Time.now + (7 - wday + 7)*24*3600
+            end
+          else
+            nil
+          end
+
+          due = due.strftime "%Y-%m-%d" if due
+
+          due
         end
       end
     end
