@@ -1,3 +1,10 @@
+This project is **no longer maintained**.
+
+If you're interested in taking it over, we'd love to hear from you.
+Email [developers@springest.com](mailto:developers@springest.com).
+
+*****
+
 # Pip - An Alfred Workflow for Pipeline Deals
 
 Pip is a Pipeline Deals workflow for Alfred 2. You can manage the
